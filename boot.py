@@ -69,6 +69,8 @@ def captive_portal(essid_name):
 		if con is True:
 			existing_config = True
 			print("Network connected")
+			ap = network.WLAN(network.AP_IF)
+			ap.active(False)    # turn off AP SSID
 		else:
 			existing_config = False
 			print("Incorrect network configuration")
